@@ -25,10 +25,31 @@ export async function shrink(file: File): Promise<File> {
 }
 
 /** Direct browser -> Vercel Blob upload (the file never goes through a serverless function). */
-export async function uploadFile(file: File): Promise<string> {
+export async function uploadFile(file: File, onProgress?: (pct: number) => void): Promise<string> {
   const f = await shrink(file);
-  const res = await upload(f.name, f, { access: "public", handleUploadUrl: "/api/admin/upload", contentType: f.type });
-  return res.url;
+  const ctrl = new AbortController();
+  // Never hang silently: give up if there is no progress for 90 seconds.
+  let timer = setTimeout(() => ctrl.abort(), 90_000);
+  try {
+    const res = await upload(f.name, f, {
+      access: "public",
+      handleUploadUrl: "/api/admin/upload",
+      contentType: f.type,
+      multipart: f.size > 4_000_000,
+      abortSignal: ctrl.signal,
+      onUploadProgress: ({ percentage }) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => ctrl.abort(), 90_000);
+        onProgress?.(Math.round(percentage));
+      },
+    });
+    return res.url;
+  } catch (e) {
+    if (ctrl.signal.aborted) throw new Error("timed out (no progress for 90s). Check your internet, or try a smaller image");
+    throw e;
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 export function Uploader({ onDone, onError, multiple = false, accept = "image/*,application/pdf" }: {
@@ -40,18 +61,20 @@ export function Uploader({ onDone, onError, multiple = false, accept = "image/*,
   const { t } = useLang();
   const ref = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
+  const [pct, setPct] = useState<number | null>(null);
 
   async function pick(files: FileList | null) {
     if (!files?.length) return;
     setBusy(true);
     const urls: string[] = [];
     try {
-      for (const f of Array.from(files)) urls.push(await uploadFile(f));
+      for (const f of Array.from(files)) urls.push(await uploadFile(f, setPct));
       onDone(urls);
     } catch (e) {
       onError(`${t("admin.upload.failed")}: ${(e as Error).message}`);
     } finally {
       setBusy(false);
+      setPct(null);
       if (ref.current) ref.current.value = "";
     }
   }
@@ -60,7 +83,7 @@ export function Uploader({ onDone, onError, multiple = false, accept = "image/*,
     <>
       <input ref={ref} type="file" hidden multiple={multiple} accept={accept} onChange={(e) => pick(e.target.files)} />
       <button type="button" disabled={busy} onClick={() => ref.current?.click()} className="btn btn-ghost !min-h-[44px]">
-        {busy ? t("admin.upload.uploading") : t("admin.upload.choose")}
+        {busy ? `${t("admin.upload.uploading")}${pct !== null ? ` ${pct}%` : ""}` : t("admin.upload.choose")}
       </button>
     </>
   );
