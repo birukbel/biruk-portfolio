@@ -1,0 +1,118 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource/noto-sans-ethiopic/ethiopic-400.css";
+@import "@fontsource/noto-sans-ethiopic/ethiopic-600.css";
+@import "@fontsource/noto-serif-ethiopic/ethiopic-500.css";
+@import "@fontsource/noto-serif-ethiopic/ethiopic-700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: 8 13 18;
+  --panel: 15 23 30;
+  --line: 34 48 58;
+  --fg: 232 238 241;
+  --mute: 157 172 181;
+  --accent: 45 212 191;
+  --accent2: 245 185 66;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+html[lang="am"] body {
+  line-height: 1.75; /* Ethiopic glyphs need more air */
+}
+
+body {
+  background: rgb(var(--ink));
+  color: rgb(var(--fg));
+  font-family: "Inter", "Noto Sans Ethiopic", system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: "Cormorant Garamond", "Noto Serif Ethiopic", Georgia, serif;
+}
+html[lang="am"] h1,
+html[lang="am"] h2,
+html[lang="am"] h3 {
+  font-family: "Noto Serif Ethiopic", "Cormorant Garamond", serif;
+  line-height: 1.35;
+}
+
+/* soft grid + glow background, purely decorative */
+.bg-tech {
+  background-image:
+    radial-gradient(60rem 30rem at 85% -10%, rgb(var(--accent) / 0.14), transparent 60%),
+    radial-gradient(40rem 24rem at -10% 20%, rgb(var(--accent2) / 0.08), transparent 60%),
+    linear-gradient(rgb(var(--line) / 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--line) / 0.35) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+  background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.card {
+  background: rgb(var(--panel));
+  border: 1px solid rgb(var(--line));
+  border-radius: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: rgb(var(--accent)); color: rgb(var(--ink)); }
+.btn-primary:hover { background: rgb(var(--accent) / 0.85); }
+.btn-ghost { border: 1px solid rgb(var(--line)); color: rgb(var(--fg)); }
+.btn-ghost:hover { border-color: rgb(var(--accent)); }
+
+.input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.6rem 0.9rem;
+  background: rgb(var(--ink));
+  border: 1px solid rgb(var(--line));
+  border-radius: 0.75rem;
+  color: rgb(var(--fg));
+  font-size: 16px; /* prevents iOS zoom on focus */
+}
+.input:focus { border-color: rgb(var(--accent)); outline: none; box-shadow: 0 0 0 3px rgb(var(--accent) / 0.25); }
+
+.chip {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid rgb(var(--line));
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: rgb(var(--mute));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

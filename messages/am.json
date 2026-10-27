@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "ብሩክ በለጠ | የዲጂታል ክህሎት አሰልጣኝ፣ የአይቲ ሲስተሞች እና ድረ ገጽ ገንቢ",
+    "description": "የብሩክ በለጠ ፖርትፎሊዮ፡ በአምሬፍ ሄልዝ አፍሪካ የወጣቶች ዲጂታል ክህሎት አሰልጣኝ፣ የMBA እና የኮምፒውተር ሳይንስ ዲግሪ ባለቤት፣ በኢትዮጵያ ሁለት ቋንቋ ድረ ገጾችን እና በAI የታገዘ ይዘት የሚሰራ።"
+  },
+  "nav": { "about": "ስለ እኔ", "services": "አገልግሎቶች", "experience": "ልምድ", "projects": "ፕሮጀክቶች", "skills": "ክህሎቶች", "education": "ትምህርት", "gallery": "ማዕከለ ስዕል", "contact": "አግኙኝ", "menu": "ማውጫ", "close": "ዝጋ", "language": "ቋንቋ", "skip": "ወደ ይዘቱ ዝለል" },
+  "hero": { "hello": "ሰላም፣ እኔ", "cv": "CV አውርድ", "contact": "ያግኙኝ", "scroll": "ወደ ታች" },
+  "sections": {
+    "about": "ስለ እኔ",
+    "services": "የምሰራቸው ስራዎች",
+    "experience": "የስራ ልምድ",
+    "projects": "የተመረጡ ፕሮጀክቶች",
+    "skills": "ክህሎቶች እና መሳሪያዎች",
+    "education": "ትምህርት እና ሰርተፊኬቶች",
+    "gallery": "ማዕከለ ስዕል",
+    "contact": "አብረን እንስራ"
+  },
+  "labels": { "present": "እስካሁን", "live": "የቀጥታ ድረ ገጽ", "code": "ኮድ", "certifications": "ሰርተፊኬቶች", "location": "የምኖርበት" },
+  "contact": {
+    "intro": "ፕሮጀክት፣ የስልጠና ፍላጎት ወይም የስራ እድል አለዎት? መልዕክት ይላኩልኝ፤ በተቻለኝ ፍጥነት እመልሳለሁ።",
+    "name": "ስምዎ", "email": "ኢሜይልዎ", "message": "መልዕክት", "send": "መልዕክት ላክ", "sending": "በመላክ ላይ...",
+    "sent": "እናመሰግናለን! መልዕክትዎ ተልኳል።", "error": "ችግር ተፈጥሯል። እባክዎ በኢሜይል ያግኙኝ።",
+    "closed": "የመገናኛ ቅጹ ለጊዜው ዝግ ነው። እባክዎ በኢሜይል ወይም በማህበራዊ ሚዲያ ያግኙኝ።",
+    "direct": "ወይም በቀጥታ ያግኙኝ"
+  },
+  "footer": { "rights": "መብቱ በህግ የተጠበቀ ነው።", "top": "ወደ ላይ ተመለስ", "built": "በNext.js የተሰራ" },
+  "admin": {
+    "title": "የፖርትፎሊዮ አድሚን", "login": "ግባ", "password": "የይለፍ ቃል", "enter": "ግባ", "logout": "ውጣ", "viewSite": "ድረ ገጹን እይ",
+    "save": "አስቀምጥ", "saved": "ተቀምጧል", "saving": "በማስቀመጥ ላይ...", "delete": "ሰርዝ", "add": "አዲስ ጨምር", "edit": "አስተካክል", "cancel": "ተው",
+    "confirmDelete": "ይህን ንጥል መሰረዝ ይፈልጋሉ? መመለስ አይቻልም።", "visible": "ይታያል", "hidden": "ተደብቋል", "empty": "እስካሁን ምንም የለም።",
+    "up": "ወደ ላይ", "down": "ወደ ታች", "error": "ስህተት",
+    "tabs": { "dashboard": "ዳሽቦርድ", "profile": "መገለጫ", "messages": "መልዕክቶች", "settings": "ቅንብሮች" },
+    "dashboard": { "welcome": "እንኳን ደህና መጡ", "content": "ይዘት", "unseen": "ያልተነበቡ መልዕክቶች", "items": "ንጥሎች", "notSeeded": "ዳታቤዙ ባዶ ነው። ማስተካከል ለመጀመር መነሻ ይዘቱን ይጫኑ።", "seed": "መነሻ ይዘት ጫን", "fallback": "ዳታቤዙ በማይደረስበት ጊዜ የህዝብ ድረ ገጹ አብሮ የተሰራውን ነባሪ ይዘት ያሳያል።" },
+    "profile": { "name": "ሙሉ ስም", "headline": "ርዕስ መስመር", "tagline": "አጭር መግቢያ (ሄሮ)", "about": "ስለ እኔ", "location": "ቦታ", "availability": "የዝግጁነት መስመር", "email": "ኢሜይል", "phone": "ስልክ", "linkedin": "LinkedIn ሊንክ", "github": "GitHub ሊንክ", "telegram": "Telegram ሊንክ", "youtube": "YouTube ሊንክ", "cvUrl": "CV ፋይል (PDF)", "avatarUrl": "የግል ፎቶ", "heroImage": "የሄሮ ጀርባ ምስል" },
+    "settings": { "sections": "የሚታዩ ክፍሎች", "services": "አገልግሎቶች", "projects": "ፕሮጀክቶች", "certifications": "ሰርተፊኬቶች", "gallery": "ማዕከለ ስዕል", "contactOpen": "የመገናኛ ቅጽ ክፍት ነው", "theme": "ቀለማት", "accent": "ዋና ቀለም", "accent2": "ሁለተኛ ቀለም", "backup": "ምትኬ", "export": "ሁሉንም ይዘት አውጣ (JSON)", "import": "ምትኬ አስገባ", "importWarn": "ማስገባት አሁን ያለውን ሁሉንም ይዘት ይተካል። ይቀጥሉ?", "imported": "ምትኬ ገብቷል" },
+    "messages": { "none": "እስካሁን መልዕክት የለም።", "csv": "CSV አውጣ", "markSeen": "እንደተነበበ ምልክት አድርግ", "markUnseen": "እንዳልተነበበ ምልክት አድርግ", "from": "ከ" },
+    "upload": { "choose": "ፋይል ምረጥ", "uploading": "በመጫን ላይ...", "remove": "አስወግድ", "failed": "መጫን አልተሳካም" }
+  }
+}

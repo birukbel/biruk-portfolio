@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "title": "Biruk Belete | Digital skills coach, IT systems & web developer",
+    "description": "Portfolio of Biruk Belete: youth digital skills coach at Amref Health Africa, with an MBA and a BSc in Computer Science, building bilingual websites and AI-assisted content in Ethiopia."
+  },
+  "nav": { "about": "About", "services": "Services", "experience": "Experience", "projects": "Projects", "skills": "Skills", "education": "Education", "gallery": "Gallery", "contact": "Contact", "menu": "Menu", "close": "Close", "language": "Language", "skip": "Skip to content" },
+  "hero": { "hello": "Hello, I am", "cv": "Download CV", "contact": "Get in touch", "scroll": "Scroll" },
+  "sections": {
+    "about": "About me",
+    "services": "What I do",
+    "experience": "Experience",
+    "projects": "Selected projects",
+    "skills": "Skills & tools",
+    "education": "Education & certifications",
+    "gallery": "Gallery",
+    "contact": "Let's work together"
+  },
+  "labels": { "present": "Present", "live": "Live site", "code": "Source code", "certifications": "Certifications", "location": "Based in" },
+  "contact": {
+    "intro": "Have a project, a training need or a role in mind? Send a message and I will reply as soon as I can.",
+    "name": "Your name", "email": "Your email", "message": "Message", "send": "Send message", "sending": "Sending...",
+    "sent": "Thank you! Your message has been sent.", "error": "Something went wrong. Please email me directly.",
+    "closed": "The contact form is closed right now. Please reach me by email or on social media.",
+    "direct": "Or reach me directly"
+  },
+  "footer": { "rights": "All rights reserved.", "top": "Back to top", "built": "Built with Next.js" },
+  "admin": {
+    "title": "Portfolio admin", "login": "Sign in", "password": "Password", "enter": "Enter", "logout": "Log out", "viewSite": "Preview site",
+    "save": "Save", "saved": "Saved", "saving": "Saving...", "delete": "Delete", "add": "Add new", "edit": "Edit", "cancel": "Cancel",
+    "confirmDelete": "Delete this item? This cannot be undone.", "visible": "Visible", "hidden": "Hidden", "empty": "Nothing here yet.",
+    "up": "Move up", "down": "Move down", "error": "Error",
+    "tabs": { "dashboard": "Dashboard", "profile": "Profile", "messages": "Messages", "settings": "Settings" },
+    "dashboard": { "welcome": "Welcome back", "content": "Content", "unseen": "Unread messages", "items": "items", "notSeeded": "The database is empty. Load the starter content to begin editing.", "seed": "Load starter content", "fallback": "While the database is unreachable the public site shows the built-in defaults." },
+    "profile": { "name": "Full name", "headline": "Headline", "tagline": "Short intro (hero)", "about": "About me", "location": "Location", "availability": "Availability line", "email": "Email", "phone": "Phone", "linkedin": "LinkedIn URL", "github": "GitHub URL", "telegram": "Telegram URL", "youtube": "YouTube URL", "cvUrl": "CV file (PDF)", "avatarUrl": "Portrait photo", "heroImage": "Hero background image" },
+    "settings": { "sections": "Show these sections", "services": "Services", "projects": "Projects", "certifications": "Certifications", "gallery": "Gallery", "contactOpen": "Contact form open", "theme": "Colours", "accent": "Accent colour", "accent2": "Second colour", "backup": "Backup", "export": "Export all content (JSON)", "import": "Import backup", "importWarn": "Importing replaces ALL current content. Continue?", "imported": "Backup imported" },
+    "messages": { "none": "No messages yet.", "csv": "Export CSV", "markSeen": "Mark as read", "markUnseen": "Mark as unread", "from": "From" },
+    "upload": { "choose": "Choose file", "uploading": "Uploading...", "remove": "Remove", "failed": "Upload failed" }
+  }
+}
